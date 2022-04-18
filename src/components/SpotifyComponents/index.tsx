@@ -1,0 +1,6 @@
+export {default as Albums} from 'components/SpotifyComponents/Albums'
+export {default as Playlists} from 'components/SpotifyComponents/Playlists'
+export {default as Episodes} from 'components/SpotifyComponents/Episodes'
+export {default as Shows} from 'components/SpotifyComponents/Shows'
+export {default as Tracks} from 'components/SpotifyComponents/Tracks'
+export {default as Artists} from 'components/SpotifyComponents/Artists'
