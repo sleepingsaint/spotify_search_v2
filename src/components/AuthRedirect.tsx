@@ -28,6 +28,6 @@ const AuthRedirect: React.FC = () => {
     if (params.get("error")) return <div>{params.get("error")}</div>;
 
     setAccessToken(data);
-    return <Navigate to={'/'} />;
+    return <Navigate to={'/search'} />;
 };
 export default AuthRedirect;
