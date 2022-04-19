@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.items_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    gap: 10px;
+
+    img {
+        width: 160px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}

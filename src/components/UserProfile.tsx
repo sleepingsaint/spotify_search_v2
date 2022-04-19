@@ -2,7 +2,7 @@ import { useAuth } from "hooks/useAuth";
 import { useQuery } from "react-query";
 
 export const UserProfile: React.FC = () => {
-    const { apiService, isLoggedIn } = useAuth();
+    const { apiService, isLoggedIn, logout } = useAuth();
 
     const { isLoading, isError, data } = useQuery(
         "userProfile",
@@ -22,5 +22,5 @@ export const UserProfile: React.FC = () => {
         return <div>retry profile</div>;
     }
     
-    return <div>{data ? data.display_name : "No data"} </div>;
+    return <div>{data ? data.display_name : "No data"} <button onClick={logout}>Logout</button> </div>;
 };

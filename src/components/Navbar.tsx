@@ -1,20 +1,23 @@
 import { useAuth } from "hooks/useAuth";
 import { UserProfile } from "./UserProfile";
-import Styles from 'styles/navbar.module.scss';
+import Styles from "styles/navbar.module.scss";
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<React.CSSProperties> = (props) => {
     const { isLoggedIn, login, logout } = useAuth();
+
     return (
-        <div className={Styles.container}>
-            Spotify Search V2
-            {/* {isLoggedIn ? (
-                <div>
+        <div className={Styles.container} style={{ ...props }}>
+            <a href={window.location.origin}>Spotify Search V2</a>
+            {isLoggedIn ? (
+                <div style={{ float: "right" }}>
                     <UserProfile />
-                    <button onClick={logout}>Logout</button>
+                    {/* <button onClick={logout} style={{display: "inline"}}>Logout</button> */}
                 </div>
             ) : (
-                <button onClick={login}>Login</button>
-            )} */}
+                <button onClick={login} style={{ float: "right" }}>
+                    Login
+                </button>
+            )}
         </div>
     );
 };

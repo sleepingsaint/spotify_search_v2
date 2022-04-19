@@ -23,6 +23,7 @@ export class AuthService {
     // clears the refresh token stored in localstorage
     static async logout() {
         localStorage.removeItem("spotify_search_v2_refresh_token");
+        window.location.href = window.location.origin;
     }
 
     // retrieves the access token from authorization code

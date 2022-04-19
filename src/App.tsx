@@ -4,20 +4,13 @@ import Home from "components/Home";
 import AuthRedirect from "components/AuthRedirect";
 import { AuthService } from "services/AuthService";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Navbar from "components/Navbar";
+import Search from "components/Search";
 
 function App() {
     const queryClient = new QueryClient();
     return (
-        <div className="App" style={{width: "100vw", height: "100vh", display: "flex", flexDirection: "column"}}>
-            <div style={{flexGrow: 0, flexShrink: 0}}>
-            <Navbar />
-            </div>
-            <div style={{flexGrow: 1, flexShrink: 1}}>
-            <Home />
-
-            </div>
-            {/* <QueryClientProvider client={queryClient}>
+        <div className="App">
+            <QueryClientProvider client={queryClient}>
                 <AuthContextProvider
                     login={AuthService.login}
                     logout={AuthService.logout}
@@ -25,11 +18,10 @@ function App() {
                     refreshAccessToken={AuthService.refreshAccessToken}
                     checkAuthOnFirstVisit={true}
                 >
-                    <Navbar />
                     <BrowserRouter>
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            <Route path="/home" element={<Home />} />
+                            <Route path="/search" element={<Search />} />
                             <Route
                                 path="/auth/redirect"
                                 element={<AuthRedirect />}
@@ -37,7 +29,7 @@ function App() {
                         </Routes>
                     </BrowserRouter>
                 </AuthContextProvider>
-            </QueryClientProvider> */}
+            </QueryClientProvider>
         </div>
     );
 }

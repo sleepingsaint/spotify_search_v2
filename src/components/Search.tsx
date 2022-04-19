@@ -10,6 +10,8 @@ import {
     Shows,
     Tracks,
 } from "components/SpotifyComponents";
+import Navbar from "./Navbar";
+import SearchStyles from 'styles/search.module.scss';
 
 const Search: React.FC = () => {
     const { apiService } = useAuth();
@@ -26,16 +28,15 @@ const Search: React.FC = () => {
     }, [debouncedSearchQuery]);
 
     return (
-        <div>
-            <h2>Search</h2>
+        <div className={SearchStyles.container}>
+            <Navbar />
             <input
                 type="text"
+                placeholder="Search here"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
             />
-
-            <hr />
-            <h2>Results</h2>
+            {!data && <p style={{textAlign: "center"}}>No results found. Try searching with other input</p>}
             {data && data.albums && <Albums initial_resp={data.albums} />}
             {data && data.artists && <Artists initial_resp={data.artists} />}
             {data && data.shows && <Shows initial_resp={data.shows} />}
