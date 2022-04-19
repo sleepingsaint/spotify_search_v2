@@ -4,6 +4,8 @@ This is a hobby project to try out the cloudflare workers for authentication and
 
 Since, this is a experimental project I didn't dedicated much time on improving the UI.
 
+The project can be accessed from [here](https://spotify-search-v2.pages.dev/).
+
 ## Tech Stack
 
 * ReactJS - frontend framework
